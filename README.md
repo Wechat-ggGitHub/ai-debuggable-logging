@@ -36,23 +36,6 @@ When AI hits a bug, it reads the logs first — sees the actual error, the actua
 | **One JSON per line** | Fixed fields: `ts`, `level`, `mod`, `msg`. Errors get `err`, failed calls get `req`. |
 | **No frameworks** | One function, ≤20 lines. Auto-creates timestamped directories. Add to `.gitignore`. |
 
-## Applicable Scope
-
-**Works with:**
-- Claude Code, Cursor, Windsurf, Cline, Aider — any AI coding tool that reads `CLAUDE.md`
-- Any programming language (Python, JavaScript, Go, Rust, etc.)
-- Any project type — web apps, CLI tools, scripts, microservices
-
-**Best fit:**
-- Projects where AI does most of the coding and debugging
-- Bugs that are hard to reproduce or only show up in specific runtime conditions
-- External API integrations, database operations, async flows — anything with state
-
-**Not needed for:**
-- Simple scripts that run once and exit
-- Projects you never use AI to debug
-- Environments where you already have structured logging that AI can access
-
 ## Usage
 
 **Option 1: Copy to your project**
@@ -123,23 +106,6 @@ AI 遇到 bug 时只能猜——读代码、假设原因、改代码，经常改
 | **新模块多记，稳定后只记错** | 首次接入时每个环节都记，稳定后只在错误路径写日志 |
 | **一行 JSON，固定字段** | 必填 `ts`、`level`、`mod`、`msg`，error 带 `err`，外部调用失败带 `req` |
 | **够用就行，不搞框架** | 一个写 JSONL 的函数，不超过 20 行，按启动时间自动建目录 |
-
-### 适用范围
-
-**适用于：**
-- Claude Code、Cursor、Windsurf、Cline、Aider 等所有读取 `CLAUDE.md` 的 AI 编程工具
-- 任何编程语言（Python、JavaScript、Go、Rust 等）
-- Web 应用、CLI 工具、脚本、微服务——任何项目类型
-
-**最适合：**
-- 主要靠 AI 写代码和调试的项目
-- 难以复现或只在特定运行时条件下才出现的 bug
-- 外部 API 集成、数据库操作、异步流程——任何涉及状态的场景
-
-**不需要：**
-- 跑一次就退出的简单脚本
-- 从来不用 AI 调试的项目
-- 已经有结构化日志且 AI 能直接访问的环境
 
 ### 使用方法
 
